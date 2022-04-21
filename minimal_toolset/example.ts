@@ -137,12 +137,8 @@ function wrapResult<V>(value: V) {
     }
 }
 
-function resultize<V,R>(f: (value: V) => R) {
-    return function()
-}
-
 let request = 'GET /users';
-let sql = wrapResult(request)
+let sql = wrap(request)
     .map(httpRequestToCommand)
     .map(commandToSql);
 console.log(sql.value);
